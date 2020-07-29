@@ -14,5 +14,5 @@ c = ax2.pcolor(mut)#, edgecolors='k', linewidths=4)
 ax2.set_title('Mutation (c)')
 fig.tight_layout()
 #plt.show()
-fig.savefig('COVID-19_Genome_Mutation_Whole_Sequences.png')
+fig.savefig('COVID-19_Genome_Mutation_Whole_Sequences.pdf')
 
