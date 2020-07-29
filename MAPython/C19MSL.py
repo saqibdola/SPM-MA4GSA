@@ -1,23 +1,24 @@
-
 import matplotlib.pyplot as plt
 import numpy as np
-g= 0
+
 y= 0
+z = 0
 
 with open('MT750057USAU.txt') as f1, open('MT750058USAU.txt') as f2, open('xyz.txt', 'w') as L1, open('zxy.txt', 'w') as L2:
     for lineno, (line1, line2) in enumerate(zip(f1, f2), 1):
         if line1 != line2:
             for i in range(len(line1)):
                 if line1[i] != line2[i]:
-                    #y = y + 1
-                    #g= (g+i)*lineno
-                    #print(i/2)#print i, a[i], b[i]
+                    y = y + 1
                     L1.write(line1)
                     L2.write(line2)
-                    g=(i)+((lineno-1)*60)
-                    print ('mismatch in line no:', lineno, ', location in line:', i, ', overall location', g)
-                    #print(i/2)
-                    #print(g)\
+                    g=(i/2)+((lineno-1)*60)
+                    z = (lineno*60)
+                    print ('mismatch in line no:', lineno, ', location in line:', int(i/2), ', overall location', int(g), line1[i], line2[i])
+                    print(y)
+    tnb= lineno*60
+    MR = (y/tnb)*100
+    print('Mutation Rate:', MR)
     L1.close()
     L2.close()
 
@@ -41,4 +42,3 @@ ax2.set_title('Mutation (c)')
 fig.tight_layout()
 #plt.show()
 fig.savefig('Updated_COVID-19_Genome_Mutation_SL.pdf')
-
