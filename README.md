@@ -1,1 +1,1 @@
-# SPM-MA4GSA
+# COVID-19 Genome Sequences analysis
