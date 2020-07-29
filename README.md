@@ -1,5 +1,5 @@
 # COVID-19 Genome Sequences Analysis
-======
+
 
 
 ## This reposiroty contains the COVID-19 genome sequences that are stored in the datasets folder.
