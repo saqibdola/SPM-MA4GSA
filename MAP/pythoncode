@@ -1,7 +1,12 @@
+
 y= 0
 ws= 1
-with open('MT291827.txt') as f1, open('MT291828.txt') as f2:
-    for lineno, (line1, line2) in enumerate(zip(f1, f2), 1):
+
+with open('sequence1.fasta') as f1, open('sequence2.fasta') as f2:
+
+#sequence1 and sequence 2 are two genome sequences in protien form
+
+for lineno, (line1, line2) in enumerate(zip(f1, f2), 1):
         for i in range(len(line1)):
             if line1[i] == line2[i]:
                 ws = ws + 1
@@ -15,7 +20,9 @@ with open('MT291827.txt') as f1, open('MT291828.txt') as f2:
 
             lineeee = lineno
 
-    taa = ((ws-lineno)+ 1)
-    print(taa)
+
+   taa = ((ws-lineno)+ 1)
+    
     MR = (y/taa)*100
+    
     print('Mutation Rate:', MR)
