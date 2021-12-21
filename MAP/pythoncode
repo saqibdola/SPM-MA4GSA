@@ -1,0 +1,21 @@
+y= 0
+ws= 1
+with open('MT291827.txt') as f1, open('MT291828.txt') as f2:
+    for lineno, (line1, line2) in enumerate(zip(f1, f2), 1):
+        for i in range(len(line1)):
+            if line1[i] == line2[i]:
+                ws = ws + 1
+            else:
+                    y = y + 1
+                    ws = ws + 1
+                    print('mismatch in line no:', lineno, ', location in line:', i + 1,
+                          'overall location', int(ws)-lineno, line1[i], line2[i])
+
+                    print(y)
+
+            lineeee = lineno
+
+    taa = ((ws-lineno)+ 1)
+    print(taa)
+    MR = (y/taa)*100
+    print('Mutation Rate:', MR)
